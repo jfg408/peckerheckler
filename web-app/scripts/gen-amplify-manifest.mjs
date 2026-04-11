@@ -36,7 +36,7 @@ const manifest = {
   framework: { name: 'Next.js', version: '14' },
 };
 
-const outDir = join(root, '.amplify-hosting');
-mkdirSync(outDir, { recursive: true });
-writeFileSync(join(outDir, 'deploy-manifest.json'), JSON.stringify(manifest, null, 2));
-console.log('Generated .amplify-hosting/deploy-manifest.json');
+// Write to .next/ (the baseDirectory Amplify checks first)
+const nextDir = join(root, '.next');
+writeFileSync(join(nextDir, 'deploy-manifest.json'), JSON.stringify(manifest, null, 2));
+console.log('Generated .next/deploy-manifest.json');

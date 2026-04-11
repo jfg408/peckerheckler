@@ -5,7 +5,8 @@ const products = [
   {
     id: 'device',
     name: 'PeckerHeckler',
-    description: 'The real deal. Weatherproof, high powered, fully-integrated, long battery. Mounts to any exterior surface. Not available yet.',
+    description: 'The real* deal. Weatherproof, high powered, fully-integrated, long battery. Mounts to any exterior surface.',
+    note: '*Not available yet.',
     price: '$600',
     image: '/device-shop.png',
     tag: null,
@@ -104,7 +105,7 @@ export default function ShopContent() {
             <img
               src={p.image}
               alt={p.name}
-              style={p.id === 'device' || p.id === 'proto' || p.id === 'merch' ? productImage : logoImage}
+              style={p.id === 'merch' ? merchImage : p.id === 'device' || p.id === 'proto' ? productImage : logoImage}
             />
             <div style={cardBody}>
               <div style={cardHeader}>
@@ -112,6 +113,7 @@ export default function ShopContent() {
                 {p.tag && <span style={tagBadge}>{p.tag}</span>}
               </div>
               <p style={description}>{p.description}</p>
+              {'note' in p && p.note && <p style={noteText}>{p.note}</p>}
               <div style={cardFooter}>
                 {p.price && <span style={priceTag}>{p.price}</span>}
                 {p.comingSoon ? (
@@ -209,6 +211,16 @@ const productImage: React.CSSProperties = {
   flexShrink: 0,
 };
 
+const merchImage: React.CSSProperties = {
+  width: 200,
+  height: 200,
+  objectFit: 'contain',
+  flexShrink: 0,
+  background: '#ffffff',
+  padding: 8,
+  boxSizing: 'border-box' as const,
+};
+
 const logoImage: React.CSSProperties = {
   width: 200,
   height: 200,
@@ -258,6 +270,13 @@ const description: React.CSSProperties = {
   lineHeight: 1.6,
   margin: 0,
   flex: 1,
+};
+
+const noteText: React.CSSProperties = {
+  color: '#888888',
+  fontSize: 12,
+  fontStyle: 'italic',
+  margin: 0,
 };
 
 const cardFooter: React.CSSProperties = {
