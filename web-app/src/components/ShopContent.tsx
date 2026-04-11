@@ -31,9 +31,9 @@ const products = [
   },
   {
     id: 'merch',
-    name: 'PeckerHeckler Merch',
-    description: 'Wear your commitment to woodpecker deterrence. Coming soon.',
-    price: 'TBD',
+    name: 'Merch',
+    description: 'Wear your pecker on your sleeve.',
+    price: '',
     image: '/logo-original.png',
     tag: null,
     comingSoon: true,
@@ -53,6 +53,12 @@ type NotifyPhase = 'idle' | 'input' | 'done';
 
 export default function ShopContent() {
   const [notifyStates, setNotifyStates] = useState<Record<string, NotifyPhase>>({});
+  const [flashingCart, setFlashingCart] = useState<string | null>(null);
+
+  function handleAddToCart(productId: string) {
+    setFlashingCart(productId);
+    setTimeout(() => setFlashingCart(null), 1800);
+  }
   const [email, setEmail] = useState('');
   const [notes, setNotes] = useState('');
   const [submitting, setSubmitting] = useState(false);
@@ -107,7 +113,7 @@ export default function ShopContent() {
               </div>
               <p style={description}>{p.description}</p>
               <div style={cardFooter}>
-                <span style={priceTag}>{p.price}</span>
+                {p.price && <span style={priceTag}>{p.price}</span>}
                 {p.comingSoon ? (
                   notifyPhase(p.id) === 'done' ? (
                     <span style={confirmedText}>You&apos;re on the list!</span>
@@ -137,7 +143,9 @@ export default function ShopContent() {
                     <div style={notifyBtn} onClick={() => handleNotify(p.id)}>Notify Me</div>
                   )
                 ) : (
-                  <div style={buyBtn}>Add to cart</div>
+                  flashingCart === p.id
+                    ? <span style={confirmedText}>Coming soon!</span>
+                    : <div style={buyBtn} onClick={() => handleAddToCart(p.id)}>Add to cart</div>
                 )}
               </div>
             </div>

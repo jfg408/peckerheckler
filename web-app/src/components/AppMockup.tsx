@@ -16,7 +16,7 @@ export default function AppMockup() {
       {/* screen content */}
       <div style={screen}>
         <p style={headline}>WOODPECKER<br />DETECTED!</p>
-        <p style={sub}>How will you respond??</p>
+        <p style={sub}>Choose your champion <span style={{ filter: 'brightness(0) opacity(0.65)', fontSize: 14 }}>🔊</span></p>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           {options.map((o) => (

@@ -63,7 +63,7 @@ export default function InvestPage() {
               <span style={currencyLabel}>$</span>
               <input
                 type="number"
-                placeholder="Intended investment size (USD, min $50k)"
+                placeholder="Intended investment size (min $50k)"
                 value={investmentSize}
                 onChange={(e) => setInvestmentSize(e.target.value)}
                 style={{ ...inputStyle, flex: 1 }}

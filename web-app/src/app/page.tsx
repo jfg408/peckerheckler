@@ -38,6 +38,7 @@ export default function HomePage() {
       {/* ── Bottom nav ──────────────────────────────────────────── */}
       <div style={bottomNav}>
         <a href="/shop" style={bottomBtn}>Shop</a>
+        <a href="/invest" style={bottomBtn}>Invest</a>
         <a href="/legal" style={bottomBtn}>Legal</a>
       </div>
 
