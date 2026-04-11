@@ -11,7 +11,7 @@ import { Colors } from '../../constants/Colors';
 
 const AUTO_RESPOND_OPTIONS: { value: ResponseAction; label: string; emoji: string }[] = [
   { value: 'hawk',       label: 'Hawk',        emoji: '🦅' },
-  { value: 'eagle',      label: 'Eagle',       emoji: '🦅' },
+  { value: 'eagle',      label: 'Eagle',       emoji: '🇺🇸' },
   { value: 'polar_bear', label: 'Polar Bear',  emoji: '🐻‍❄️' },
   { value: 'banshee',    label: 'Banshee',     emoji: '👻' },
 ];

@@ -8,9 +8,11 @@ frontend:
     build:
       commands:
         - npm run build
+        - cp -r .next/static .next/standalone/.next/static
+        - cp -r public .next/standalone/public
         - node scripts/gen-amplify-manifest.mjs
   artifacts:
-    baseDirectory: web-app/.next
+    baseDirectory: web-app/.next/standalone
     files:
       - '**/*'
   cache:

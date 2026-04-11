@@ -2,8 +2,8 @@
 export default function AppMockup() {
   const options: { label: string; sub: string; accent: string; subBold?: boolean; subColor?: string }[] = [
     { label: '🦅  Hawk',           sub: 'Most recommended',        accent: '#cc2020', subBold: true, subColor: '#16a34a' },
-    { label: '🦅  Eagle',          sub: 'Recommended for variety', accent: '#aa1818' },
-    { label: '🐻‍❄️  Polar Bear',      sub: 'Most unexpected',         accent: '#d97706' },
+    { label: '🇺🇸  Eagle',          sub: 'Good variety',            accent: '#aa1818' },
+    { label: '🐻‍❄️  Polar Bear',      sub: 'Unexpected',              accent: '#d97706' },
     { label: '👻  Banshee',         sub: 'Not recommended',         accent: '#7c3aed' },
     { label: '🎤  Speak directly to the woodpecker', sub: 'Not recommended',         accent: '#6b4c9a' },
   ];
