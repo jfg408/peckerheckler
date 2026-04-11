@@ -77,7 +77,7 @@ export default function ShopContent() {
     }
     if (!email) return;
     setSubmitting(true);
-    await fetch('/api/notify', {
+    await fetch('https://x3gce4pfb6kowdfxlibexi7dbm0ckhmz.lambda-url.us-east-1.on.aws/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, productId, notes: notes || undefined }),
