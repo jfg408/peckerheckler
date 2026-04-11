@@ -1,11 +1,11 @@
 /* Renders a phone-shaped mockup of the incident response screen. */
 export default function AppMockup() {
-  const options: { label: string; sub: string; accent: string; subBold?: boolean; subColor?: string }[] = [
-    { label: '🦅  Hawk',           sub: 'Most recommended',        accent: '#cc2020', subBold: true, subColor: '#16a34a' },
-    { label: '🇺🇸  Eagle',          sub: 'Good variety',            accent: '#aa1818' },
-    { label: '🐻‍❄️  Polar Bear',      sub: 'Unexpected',              accent: '#d97706' },
-    { label: '👻  Banshee',         sub: 'Not recommended',         accent: '#7c3aed' },
-    { label: '🎤  Speak directly to the woodpecker', sub: 'Not recommended',         accent: '#6b4c9a' },
+  const options: { icon: string; iconImg?: string; label: string; sub: string; accent: string; subBold?: boolean; subColor?: string }[] = [
+    { icon: '🦅', label: 'Hawk',   sub: 'Most recommended', accent: '#cc2020', subBold: true, subColor: '#16a34a' },
+    { icon: '', iconImg: 'https://flagcdn.com/us.svg', label: 'Eagle', sub: 'Good variety', accent: '#aa1818' },
+    { icon: '🐻‍❄️', label: 'Polar Bear',                      sub: 'Unexpected',       accent: '#d97706' },
+    { icon: '👻', label: 'Banshee',                          sub: 'Not recommended',  accent: '#7c3aed' },
+    { icon: '🎤', label: 'Speak directly to the woodpecker', sub: 'Not recommended',  accent: '#6b4c9a' },
   ];
 
   return (
@@ -21,7 +21,13 @@ export default function AppMockup() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           {options.map((o) => (
             <div key={o.label} style={{ ...optionCard, borderLeftColor: o.accent }}>
-              <span style={optionLabel}>{o.label}</span>
+              <span style={optionLabel}>
+                {o.iconImg
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  ? <img src={o.iconImg} alt="" style={flagIcon} />
+                  : <span style={optionIcon}>{o.icon}</span>
+                }{'  '}{o.label}
+              </span>
               <span style={{
                 ...optionSub,
                 fontWeight: o.subBold ? 700 : 400,
@@ -97,6 +103,17 @@ const optionCard: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   gap: 2,
+};
+
+const optionIcon: React.CSSProperties = {
+  fontFamily: 'system-ui, sans-serif',
+};
+
+const flagIcon: React.CSSProperties = {
+  height: '1em',
+  width: '1em',
+  verticalAlign: '-0.15em',
+  display: 'inline-block',
 };
 
 const optionLabel: React.CSSProperties = {
