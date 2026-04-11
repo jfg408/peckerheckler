@@ -1,0 +1,122 @@
+/* Renders a phone-shaped mockup of the incident response screen. */
+export default function AppMockup() {
+  const options: { label: string; sub: string; accent: string; subBold?: boolean; subColor?: string }[] = [
+    { label: '🦅  Hawk',           sub: 'Most recommended',        accent: '#cc2020', subBold: true, subColor: '#16a34a' },
+    { label: '🦅  Eagle',          sub: 'Recommended for variety', accent: '#aa1818' },
+    { label: '🐻‍❄️  Polar Bear',      sub: 'Most unexpected',         accent: '#d97706' },
+    { label: '👻  Banshee',         sub: 'Not recommended',         accent: '#7c3aed' },
+    { label: '🎤  Speak directly to the woodpecker', sub: 'Not recommended',         accent: '#6b4c9a' },
+  ];
+
+  return (
+    <div style={phone}>
+      {/* notch */}
+      <div style={notch} />
+
+      {/* screen content */}
+      <div style={screen}>
+        <p style={headline}>WOODPECKER<br />DETECTED!</p>
+        <p style={sub}>How will you respond??</p>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          {options.map((o) => (
+            <div key={o.label} style={{ ...optionCard, borderLeftColor: o.accent }}>
+              <span style={optionLabel}>{o.label}</span>
+              <span style={{
+                ...optionSub,
+                fontWeight: o.subBold ? 700 : 400,
+                color: o.subColor ?? '#555555',
+              }}>{o.sub}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* home bar */}
+      <div style={homeBar} />
+    </div>
+  );
+}
+
+/* ---- styles ---- */
+
+const phone: React.CSSProperties = {
+  width: 280,
+  background: '#e8e8e8',
+  borderRadius: 40,
+  padding: '16px 8px 20px',
+  boxShadow: '0 0 0 6px #dcdcdc, 0 0 0 8px #e8e8e8, 0 24px 64px rgba(0,0,0,0.15)',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  gap: 12,
+  userSelect: 'none',
+};
+
+const notch: React.CSSProperties = {
+  width: 80,
+  height: 20,
+  background: '#f5f5f5',
+  borderRadius: 10,
+  marginBottom: 4,
+};
+
+const screen: React.CSSProperties = {
+  width: '100%',
+  padding: '16px 16px 8px',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 10,
+};
+
+const headline: React.CSSProperties = {
+  margin: 0,
+  color: '#111111',
+  fontSize: 28,
+  fontFamily: 'var(--font-display), sans-serif',
+  fontWeight: 400,
+  textAlign: 'center',
+  lineHeight: 1.1,
+  letterSpacing: 1,
+};
+
+const sub: React.CSSProperties = {
+  margin: 0,
+  color: '#555555',
+  fontSize: 16,
+  fontFamily: 'var(--font-display), sans-serif',
+  letterSpacing: 1,
+  textAlign: 'center',
+};
+
+const optionCard: React.CSSProperties = {
+  background: '#dcdcdc',
+  borderRadius: 10,
+  padding: '12px 14px',
+  borderLeft: '4px solid',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 2,
+};
+
+const optionLabel: React.CSSProperties = {
+  color: '#111111',
+  fontSize: 18,
+  fontFamily: 'var(--font-display), sans-serif',
+  fontWeight: 400,
+  letterSpacing: 1,
+};
+
+const optionSub: React.CSSProperties = {
+  color: '#555555',
+  fontSize: 11,
+  fontStyle: 'italic',
+};
+
+const homeBar: React.CSSProperties = {
+  width: 80,
+  height: 4,
+  background: '#cccccc',
+  borderRadius: 2,
+  marginTop: 8,
+};

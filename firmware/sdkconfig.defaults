@@ -1,0 +1,21 @@
+# PeckerHeckler sdkconfig defaults
+# Override via: idf.py menuconfig
+
+# Partition table — reserve 2 MB for app, rest for defaults
+CONFIG_PARTITION_TABLE_SINGLE_APP=y
+
+# Increase main task stack (HTTP + WebSocket need headroom)
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=8192
+
+# Increase HTTP client buffer for audio payloads
+CONFIG_ESP_HTTP_CLIENT_ENABLE_HTTPS=n
+CONFIG_HTTP_MAX_REDIRECTS=3
+
+# FreeRTOS tick rate
+CONFIG_FREERTOS_HZ=1000
+
+# Enable math library (detector uses sqrtf)
+CONFIG_COMPILER_OPTIMIZATION_DEFAULT=y
+
+# Logging
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y

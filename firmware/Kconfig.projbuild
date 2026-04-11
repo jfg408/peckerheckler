@@ -1,0 +1,44 @@
+menu "PeckerHeckler Configuration"
+
+    config PH_WIFI_SSID
+        string "WiFi SSID"
+        default "your-ssid"
+        help
+            WiFi network name.
+
+    config PH_WIFI_PASSWORD
+        string "WiFi Password"
+        default ""
+        help
+            WiFi password. Leave empty for open networks.
+
+    config PH_API_URL
+        string "Backend API URL"
+        default "http://192.168.1.100:8000"
+        help
+            Full URL of the PeckerHeckler backend (no trailing slash).
+
+    config PH_DEVICE_ID
+        string "Device ID"
+        default "ph-000000000000"
+        help
+            Unique device identifier. Recommend: ph-{MAC bytes hex}.
+            The backend auto-registers this on first incident report.
+
+    config PH_AMP_THRESHOLD_PCT
+        int "Detection amplitude threshold (0–100)"
+        default 15
+        range 1 100
+        help
+            RMS amplitude threshold as a percentage of full scale.
+            Lower = more sensitive (more false positives).
+            Higher = less sensitive (may miss quiet woodpeckers).
+
+    config PH_RUN_SELF_TEST
+        bool "Run self-test on boot"
+        default y
+        help
+            On boot, plays the woodpecker test sound through the speaker
+            and validates the mic can hear it. Fails with red LED if not.
+
+endmenu

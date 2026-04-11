@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "PeckerHeckler",
+    "slug": "peckerheckler",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "platforms": ["ios", "android"],
+    "plugins": [
+      "expo-router",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#2d6a2d"
+        }
+      ]
+    ],
+    "scheme": "peckerheckler",
+    "notification": {
+      "androidMode": "default"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js
+web-app/.next/
+web-app/out/
+
+# build outputs
+dist/
+build/
+
+# env files
+.env
+.env*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# editor
+.vscode/settings.json
+*.suo
+*.user
