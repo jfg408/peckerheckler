@@ -8,6 +8,7 @@ frontend:
     build:
       commands:
         - npm run build
+        - node scripts/gen-amplify-manifest.mjs
   artifacts:
     baseDirectory: web-app/.next
     files:

@@ -34,7 +34,7 @@ const products = [
     name: 'Merch',
     description: 'Wear your pecker on your sleeve.',
     price: '',
-    image: '/logo-original.png',
+    image: '/t-shirt.png',
     tag: null,
     comingSoon: true,
   },
@@ -104,7 +104,7 @@ export default function ShopContent() {
             <img
               src={p.image}
               alt={p.name}
-              style={p.id === 'device' || p.id === 'proto' ? productImage : logoImage}
+              style={p.id === 'device' || p.id === 'proto' || p.id === 'merch' ? productImage : logoImage}
             />
             <div style={cardBody}>
               <div style={cardHeader}>
