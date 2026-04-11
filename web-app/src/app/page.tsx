@@ -2,11 +2,6 @@ import AppMockup from '../components/AppMockup';
 
 export default function HomePage() {
   return (
-    <>
-    <nav style={nav}>
-      <a href="/shop" style={navLink}>Shop</a>
-      <a href="/legal" style={navLink}>Legal</a>
-    </nav>
     <main style={main}>
 
       {/* ── Hero ────────────────────────────────────────────────── */}
@@ -27,8 +22,8 @@ export default function HomePage() {
         <h2 style={h2}>How it works</h2>
         <div style={steps}>
           {[
-            { icon: '🎙️', title: 'Detect',   body: 'An outdoor mic continuously listens for the distinctive burst-drumming pattern of a woodpecker.' },
-            { icon: '📲', title: 'Alert',    body: 'The moment one is detected, your phone gets a notification and the response screen opens instantly.' },
+            { icon: '🎙️', title: 'Detect',   body: 'Outdoor mic listens for woodpeckers.' },
+            { icon: '📲', title: 'Alert',    body: 'Instant notification when one is detected.' },
             { icon: '🔊', title: 'Deter',    body: 'Choose how to defend your home.' },
           ].map((s) => (
             <div key={s.title} style={stepCard}>
@@ -40,8 +35,13 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Bottom nav ──────────────────────────────────────────── */}
+      <div style={bottomNav}>
+        <a href="/shop" style={bottomBtn}>Shop</a>
+        <a href="/legal" style={bottomBtn}>Legal</a>
+      </div>
+
     </main>
-    </>
   );
 }
 
@@ -63,13 +63,14 @@ const hero: React.CSSProperties = {
 
 const logo: React.CSSProperties = {
   width: 'clamp(360px, 72vw, 620px)',
-  marginBottom: 4,
+  marginBottom: -24,
   padding: '0 32px',
   boxSizing: 'border-box' as const,
+  transform: 'translateX(10px)',
 };
 
 const tagline: React.CSSProperties = {
-  fontSize: 'clamp(3rem, 8vw, 5.5rem)',
+  fontSize: 'clamp(2.55rem, 6.8vw, 4.675rem)',
   fontFamily: 'var(--font-display), sans-serif',
   fontWeight: 400,
   color: '#cc2020',
@@ -119,20 +120,23 @@ const stepIcon: React.CSSProperties  = { fontSize: 32 };
 const stepTitle: React.CSSProperties = { margin: 0, fontSize: '1.4rem', fontFamily: 'var(--font-display), sans-serif', fontWeight: 400, color: '#111111', letterSpacing: 1 };
 const stepBody: React.CSSProperties  = { margin: 0, color: '#555555', fontSize: 14, lineHeight: 1.6 };
 
-const nav: React.CSSProperties = {
-  position: 'fixed',
-  top: 0,
-  right: 0,
-  padding: '16px 24px',
-  zIndex: 100,
+const bottomNav: React.CSSProperties = {
   display: 'flex',
-  gap: 24,
+  gap: 16,
+  justifyContent: 'center',
 };
 
-const navLink: React.CSSProperties = {
-  color: '#cc2020',
+const bottomBtn: React.CSSProperties = {
+  flex: 1,
+  maxWidth: 240,
+  textAlign: 'center' as const,
+  padding: '14px 0',
+  borderRadius: 12,
+  background: '#cc2020',
+  color: '#ffffff',
   textDecoration: 'none',
   fontFamily: 'var(--font-display), sans-serif',
-  fontSize: '1.1rem',
-  letterSpacing: 1,
+  fontSize: '1.3rem',
+  letterSpacing: 2,
 };
+

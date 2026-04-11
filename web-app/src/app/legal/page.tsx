@@ -16,7 +16,6 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 export default function LegalPage() {
   return (
     <main style={main}>
-      <a href="/" style={backLink}>← Back</a>
       <h1 style={h1}>Legal</h1>
 
       {/* ── Disclaimer ─────────────────────────────────────────── */}
@@ -25,7 +24,7 @@ export default function LegalPage() {
           Pursuant to the Migratory Bird Treaty Act, 16 U.S.C. § 703(a), harassing
           a woodpecker is a federal crime.{' '}
           <strong style={{ color: '#111111' }}>Pecker Heckler is not a woodpecker harassment tool.</strong>{' '}
-          It is a woodpecker <em>deterrent</em> tool. We condemn
+          It is a woodpecker deterrent tool. We condemn
           woodpecker harassment in all forms.
         </p>
       </Section>

@@ -29,6 +29,9 @@ export const api = {
 
   respondToIncident: (id: number, action: ResponseAction) =>
     post(`/incidents/${id}/respond`, { action }),
+
+  setAutoRespond: (enabled: boolean, action: ResponseAction) =>
+    post(`/devices/${DEVICE_ID}/auto-respond`, { enabled, action }),
 };
 
 /** Build WebSocket URI for the streaming endpoint. */
