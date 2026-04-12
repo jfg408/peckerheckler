@@ -24,7 +24,7 @@ export default function HomePage() {
           {[
             { icon: '🎙️', title: 'Detect',   body: 'Outdoor mic listens for woodpeckers.' },
             { icon: '📲', title: 'Alert',    body: 'Instant notification when one is detected.' },
-            { icon: '🔊', title: 'Deter',    body: 'Choose how to defend your home.' },
+            { icon: '🔊', title: 'Deter',    body: 'Choose your fighter.' },
           ].map((s) => (
             <div key={s.title} style={stepCard}>
               <span style={stepIcon}>{s.icon}</span>

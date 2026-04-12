@@ -40,7 +40,7 @@ export default function InvestPage() {
         </p>
 
         <p style={p}>
-          Based on take rates in our initial testing area (upper market Lake Tahoe mountain real
+          Based on take rates in our initial testing area (upper-market Lake Tahoe mountain real
           estate) we estimate a <strong style={strong}>25–50% household take rate globally</strong>,
           which would translate to a TAM of{' '}
           <strong style={strong}>$650 billion in hardware revenue alone</strong>, plus{' '}
