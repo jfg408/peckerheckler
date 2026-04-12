@@ -56,16 +56,6 @@ export default function LegalPage() {
 
       </Section>
 
-      {/* ── Natural Sounds ─────────────────────────────────────── */}
-      <Section title="Natural Sounds">
-        <p style={p}>
-          The sounds used by our app are natural forest environment sounds, with
-          the exception of the Polar Bear and Banshee. These sounds are limited to{' '}
-          <strong style={{ color: '#111111' }}>once per day per user</strong> so
-          they cannot reach harassment levels as defined under 16 U.S.C. § 703(a).
-        </p>
-      </Section>
-
       <footer style={footer}>
         <a href="/" style={backLink}>← Back to PeckerHeckler</a>
       </footer>
