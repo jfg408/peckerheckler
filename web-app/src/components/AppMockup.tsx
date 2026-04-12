@@ -1,11 +1,11 @@
 /* Renders a phone-shaped mockup of the incident response screen. */
 export default function AppMockup() {
-  const options: { icon: string; iconImg?: string; label: string; sub: string; accent: string; subBold?: boolean; subColor?: string }[] = [
+  const options: { icon: string; iconImg?: string; label: string; sub: string; accent: string; subBold?: boolean; subColor?: string; noSpeaker?: boolean }[] = [
     { icon: '🦅', label: 'Hawk',   sub: 'Recommended',      accent: '#cc2020', subBold: true, subColor: '#16a34a' },
     { icon: '', iconImg: 'https://flagcdn.com/us.svg', label: 'Eagle', sub: 'For variety',  accent: '#aa1818' },
     { icon: '🐻‍❄️', label: 'Polar Bear',                      sub: 'Unexpected',       accent: '#d97706' },
     { icon: '👻', label: 'Banshee',                          sub: 'Not recommended',  accent: '#7c3aed' },
-    { icon: '🎤', label: 'Speak directly to the woodpecker', sub: 'Not recommended',  accent: '#6b4c9a' },
+    { icon: '🎤', label: 'Speak directly to the woodpecker', sub: 'Not recommended',  accent: '#6b4c9a', noSpeaker: true },
   ];
 
   return (
@@ -29,7 +29,7 @@ export default function AppMockup() {
                     : <span style={optionIcon}>{o.icon}</span>
                   }{'  '}{o.label}
                 </span>
-                <span style={speakerIcon}>🔊</span>
+                {!o.noSpeaker && <span style={speakerIcon}>🔊</span>}
               </div>
               <span style={{
                 ...optionSub,
