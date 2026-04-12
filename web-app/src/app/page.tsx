@@ -63,7 +63,7 @@ const hero: React.CSSProperties = {
 };
 
 const logo: React.CSSProperties = {
-  width: 'clamp(360px, 72vw, 620px)',
+  width: 'clamp(260px, 85vw, 620px)',
   marginBottom: -24,
   padding: '0 32px',
   boxSizing: 'border-box' as const,

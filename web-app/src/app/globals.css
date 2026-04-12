@@ -1,0 +1,12 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Shop cards: stack on mobile */
+@media (max-width: 600px) {
+  .shop-card {
+    flex-direction: column !important;
+  }
+  .shop-card-img {
+    width: 100% !important;
+    height: 220px !important;
+  }
+}

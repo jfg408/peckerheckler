@@ -1,8 +1,8 @@
 /* Renders a phone-shaped mockup of the incident response screen. */
 export default function AppMockup() {
   const options: { icon: string; iconImg?: string; label: string; sub: string; accent: string; subBold?: boolean; subColor?: string }[] = [
-    { icon: '🦅', label: 'Hawk',   sub: 'Most recommended', accent: '#cc2020', subBold: true, subColor: '#16a34a' },
-    { icon: '', iconImg: 'https://flagcdn.com/us.svg', label: 'Eagle', sub: 'Good variety', accent: '#aa1818' },
+    { icon: '🦅', label: 'Hawk',   sub: 'Recommended',      accent: '#cc2020', subBold: true, subColor: '#16a34a' },
+    { icon: '', iconImg: 'https://flagcdn.com/us.svg', label: 'Eagle', sub: 'For variety',  accent: '#aa1818' },
     { icon: '🐻‍❄️', label: 'Polar Bear',                      sub: 'Unexpected',       accent: '#d97706' },
     { icon: '👻', label: 'Banshee',                          sub: 'Not recommended',  accent: '#7c3aed' },
     { icon: '🎤', label: 'Speak directly to the woodpecker', sub: 'Not recommended',  accent: '#6b4c9a' },
@@ -16,18 +16,21 @@ export default function AppMockup() {
       {/* screen content */}
       <div style={screen}>
         <p style={headline}>WOODPECKER<br />DETECTED!</p>
-        <p style={sub}>Choose your champion <span style={{ filter: 'brightness(0) opacity(0.65)', fontSize: 14 }}>🔊</span></p>
+        <p style={sub}>Choose your champion</p>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           {options.map((o) => (
             <div key={o.label} style={{ ...optionCard, borderLeftColor: o.accent }}>
-              <span style={optionLabel}>
-                {o.iconImg
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  ? <img src={o.iconImg} alt="" style={flagIcon} />
-                  : <span style={optionIcon}>{o.icon}</span>
-                }{'  '}{o.label}
-              </span>
+              <div style={optionRow}>
+                <span style={optionLabel}>
+                  {o.iconImg
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    ? <img src={o.iconImg} alt="" style={flagIcon} />
+                    : <span style={optionIcon}>{o.icon}</span>
+                  }{'  '}{o.label}
+                </span>
+                <span style={speakerIcon}>🔊</span>
+              </div>
               <span style={{
                 ...optionSub,
                 fontWeight: o.subBold ? 700 : 400,
@@ -103,6 +106,18 @@ const optionCard: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   gap: 2,
+};
+
+const optionRow: React.CSSProperties = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+};
+
+const speakerIcon: React.CSSProperties = {
+  fontSize: 14,
+  filter: 'brightness(0) opacity(0.45)',
+  flexShrink: 0,
 };
 
 const optionIcon: React.CSSProperties = {

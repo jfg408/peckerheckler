@@ -100,11 +100,12 @@ export default function ShopContent() {
 
       <div style={grid}>
         {products.map((p) => (
-          <div key={p.id} style={card}>
+          <div key={p.id} style={card} className="shop-card">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={p.image}
               alt={p.name}
+              className="shop-card-img"
               style={p.id === 'merch' ? merchImage : p.id === 'device' || p.id === 'proto' ? productImage : logoImage}
             />
             <div style={cardBody}>
