@@ -11,7 +11,7 @@ export default function InvestPage() {
   async function handleSubmit() {
     if (!email) return;
     setSubmitting(true);
-    await fetch('https://x3gce4pfb6kowdfxlibexi7dbm0ckhmz.lambda-url.us-east-1.on.aws/', {
+    await fetch('https://1vmwb6bry8.execute-api.us-east-1.amazonaws.com/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
