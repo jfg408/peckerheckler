@@ -24,7 +24,7 @@ const products = [
   {
     id: 'subscription',
     name: 'PeckerHeckler App Subscription',
-    description: 'Required to operate your device. Includes real-time detection alerts, predator sound library, and direct-speak mode.',
+    description: '',
     price: '$100 / year',
     image: '/logo-original.png',
     tag: 'Required',
